@@ -1,0 +1,642 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    background: #050201;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            white 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.6) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        80px 80px,
+        130px 130px;
+
+    background-position:
+        0 0,
+        40px 60px;
+
+    opacity: .35;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.top-bar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 200;
+}
+
+
+.logo {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.logo span {
+    font-weight: 300;
+
+    opacity: .5;
+
+    margin-left: 8px;
+}
+
+
+.back-btn {
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    background:
+        rgba(0,0,0,.3);
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+
+.back-btn:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   MARS AREA
+========================= */
+
+.mars-area {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   3D MARS CONTAINER
+========================= */
+
+#mars3d-container {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+
+    pointer-events: auto;
+}
+
+
+/* =========================
+   3D CANVAS
+========================= */
+
+#mars3d-container canvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: grab;
+
+    touch-action: none;
+}
+
+
+#mars3d-container canvas:active {
+    cursor: grabbing;
+}
+
+
+/* =========================
+   3D EQUIPMENT MARKERS
+========================= */
+
+.mars-3d-marker {
+    position: absolute !important;
+
+    width: 28px !important;
+    height: 28px !important;
+
+    padding: 0 !important;
+
+    border:
+        2px solid
+        white !important;
+
+    border-radius: 50% !important;
+
+    background:
+        #ff5a36 !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    cursor: pointer !important;
+
+    z-index: 100 !important;
+
+    pointer-events: auto !important;
+
+    box-shadow:
+        0 0 12px
+        rgba(255,90,54,.9);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.mars-3d-marker span {
+    display: block;
+
+    width: 8px;
+    height: 8px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+
+.mars-3d-marker:hover {
+    transform:
+        translate(-50%, -50%)
+        scale(1.3) !important;
+
+    box-shadow:
+        0 0 18px
+        rgba(255,90,54,1);
+}
+
+
+/* =========================
+   INFORMATION CARD
+========================= */
+
+.info-card {
+    position: fixed;
+
+    right: 30px;
+    top: 100px;
+
+    width: 380px;
+
+    height:
+        calc(100vh - 130px);
+
+    max-height:
+        calc(100vh - 130px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        rgba(18,8,6,.94);
+
+    border:
+        1px solid
+        rgba(255,150,110,.25);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transform:
+        translateX(450px);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform .6s ease,
+        opacity .6s ease;
+
+    z-index: 300;
+}
+
+
+.info-card.active {
+    transform:
+        translateX(0);
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =========================
+   EQUIPMENT IMAGE
+========================= */
+
+.equipment-image-container {
+    width: 100%;
+
+    height: 210px;
+
+    min-height: 210px;
+
+    background: #120604;
+
+    overflow: hidden;
+}
+
+
+.equipment-image-container img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content {
+    padding: 25px;
+
+    overflow-y: auto;
+
+    flex: 1;
+
+    min-height: 0;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255,150,110,.5)
+        rgba(255,255,255,.05);
+}
+
+
+.card-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.card-content::-webkit-scrollbar-track {
+    background:
+        rgba(255,255,255,.04);
+}
+
+
+.card-content::-webkit-scrollbar-thumb {
+    background:
+        rgba(255,150,110,.45);
+
+    border-radius: 10px;
+}
+
+
+.card-content::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(255,150,110,.7);
+}
+
+
+/* =========================
+   SMALL TITLE
+========================= */
+
+.small-title {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #b89b91;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.card-content h1 {
+    font-size: 26px;
+
+    margin-bottom: 25px;
+
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+/* =========================
+   INFORMATION ROW
+========================= */
+
+.info-row {
+    border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+    padding: 15px 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.info-row span {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #9d8178;
+}
+
+
+.info-row strong {
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    font-weight: 400;
+}
+
+
+/* =========================
+   SOURCE
+========================= */
+
+.source-row {
+    border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+    margin-top: 5px;
+
+    padding-top: 18px;
+}
+
+
+.source-label {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #9d8178;
+
+    margin-bottom: 10px;
+}
+
+
+.nasa-link {
+    display: inline-block;
+
+    color: white;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.4);
+
+    padding-bottom: 4px;
+
+    transition: .3s;
+}
+
+
+.nasa-link:hover {
+    color: #e2764d;
+
+    border-color: #e2764d;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-card {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.4);
+
+    background:
+        rgba(0,0,0,.5);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    z-index: 5;
+
+    transition: .3s;
+}
+
+
+.close-card:hover {
+    background: white;
+
+    color: black;
+}
+
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.instruction {
+    position: fixed;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,.6);
+
+    z-index: 150;
+
+    transition: .3s;
+
+    pointer-events: none;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .top-bar {
+        padding: 0 20px;
+    }
+
+
+    .logo {
+        font-size: 14px;
+    }
+
+
+    .info-card {
+        left: 15px;
+        right: 15px;
+
+        width: auto;
+
+        top: auto;
+        bottom: 15px;
+
+        height: 75vh;
+
+        max-height: 75vh;
+
+        transform:
+            translateY(120%);
+    }
+
+
+    .info-card.active {
+        transform:
+            translateY(0);
+    }
+
+
+    .equipment-image-container {
+        height: 150px;
+
+        min-height: 150px;
+    }
+
+
+    .card-content {
+        padding: 20px;
+    }
+
+
+    .instruction {
+        bottom: 15px;
+
+        font-size: 8px;
+
+        text-align: center;
+    }
+
+}

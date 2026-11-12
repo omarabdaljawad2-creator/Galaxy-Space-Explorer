@@ -1,0 +1,1430 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    background: #020509;
+    color: white;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    /* Allow vertical scrolling */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =========================================
+   MAIN SPACE
+========================================= */
+
+.space {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(30, 40, 55, 0.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(20, 30, 50, 0.12),
+            transparent 30%
+        ),
+
+        #020509;
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+.space::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+
+        radial-gradient(
+            1px 1px at 10% 20%,
+            rgba(255,255,255,0.8),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 20% 70%,
+            rgba(255,255,255,0.7),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 40% 30%,
+            rgba(255,255,255,0.8),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 55% 80%,
+            rgba(255,255,255,0.7),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 70% 15%,
+            rgba(255,255,255,0.8),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 85% 40%,
+            rgba(255,255,255,0.8),
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 92% 75%,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+
+    background-size: 220px 220px;
+
+    opacity: 0.7;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    position: relative;
+
+    z-index: 10;
+
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6vw;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 38px;
+}
+
+
+nav a {
+    position: relative;
+
+    text-decoration: none;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    color: white;
+}
+
+
+nav a.active {
+    color: white;
+}
+
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -8px;
+
+    height: 1px;
+
+    background: white;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    position: relative;
+
+    z-index: 2;
+
+    min-height:
+        calc(100vh - 90px);
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    margin-left: 7vw;
+
+    width: 470px;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.eyebrow {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.hero-content h1 {
+    font-size:
+        clamp(
+            55px,
+            6vw,
+            95px
+        );
+
+    line-height: 0.88;
+
+    font-weight: 300;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description {
+    width: 320px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   START BUTTON
+========================================= */
+
+#startBtn {
+    border: 1px solid
+        rgba(255,255,255,0.4);
+
+    background:
+        rgba(255,255,255,0.04);
+
+    color: white;
+
+    padding: 15px 22px;
+
+    min-width: 190px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#startBtn span {
+    margin-left: 15px;
+
+    font-size: 17px;
+}
+
+
+#startBtn:hover {
+    background: white;
+
+    color: #020509;
+}
+
+
+/* =========================================
+   3D MOON WRAPPER
+========================================= */
+
+.moon-wrapper {
+    position: absolute;
+
+    right: -8vw;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    width:
+        min(65vw, 850px);
+
+    height:
+        min(65vw, 850px);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   THREE.JS MOON
+========================================= */
+
+#moon3d {
+    width: 100%;
+
+    height: 100%;
+
+    position: relative;
+}
+
+
+#moon3d canvas {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+/* =========================================
+   EXPLORE PAGE
+========================================= */
+
+.explore-main {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    min-height:
+        calc(100vh - 90px);
+
+    padding-top: 35px;
+
+    padding-bottom: 50px;
+
+    overflow: visible;
+}
+
+
+/* =========================================
+   EXPLORE HEADING
+========================================= */
+
+.explore-heading {
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    max-width: 650px;
+
+    margin-bottom: 25px;
+}
+
+
+.explore-heading .eyebrow {
+    margin-bottom: 15px;
+}
+
+
+.explore-heading h1 {
+    font-size:
+        clamp(
+            45px,
+            5vw,
+            70px
+        );
+
+    line-height: 0.9;
+
+    font-weight: 300;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+}
+
+
+.explore-heading .description {
+    width: auto;
+
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   DESTINATIONS
+========================================= */
+
+.destinations {
+    width: 90%;
+
+    max-width: 1050px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 35px;
+
+    margin-top: 5px;
+
+    padding-bottom: 30px;
+}
+
+
+/* =========================================
+   PLANET CARD
+========================================= */
+
+.planet-card {
+    position: relative;
+
+    height: 390px;
+
+    border: 1px solid
+        rgba(255,255,255,0.12);
+
+    background:
+        rgba(255,255,255,0.025);
+
+    text-decoration: none;
+
+    color: white;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.3s,
+        background 0.3s,
+        transform 0.3s;
+}
+
+
+.planet-card:hover {
+    border-color:
+        rgba(255,255,255,0.35);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    transform:
+        translateY(-4px);
+}
+
+
+/* =========================================
+   PLANET VIEW
+========================================= */
+
+.planet-view {
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 285px;
+
+    overflow: hidden;
+}
+
+
+.planet-canvas {
+    width: 100%;
+
+    height: 100%;
+
+    position: relative;
+}
+
+
+.planet-canvas canvas {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+}
+
+
+/* =========================================
+   PLANET INFORMATION
+========================================= */
+
+.planet-info {
+    position: absolute;
+
+    left: 30px;
+
+    right: 30px;
+
+    bottom: 25px;
+
+    z-index: 5;
+}
+
+
+.planet-info p {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(255,255,255,0.4);
+
+    margin-bottom: 8px;
+}
+
+
+.planet-info h2 {
+    font-size: 28px;
+
+    font-weight: 300;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.planet-info span {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    transition: 0.3s;
+}
+
+
+.planet-card:hover
+.planet-info span {
+    color: white;
+}
+
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-content {
+    position: relative;
+
+    width: 100%;
+
+    min-height:
+        calc(100vh - 90px);
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 8vw;
+}
+
+
+.about-label {
+    position: absolute;
+
+    left: 8vw;
+
+    top: 22%;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,0.45);
+}
+
+
+.about-text {
+    margin-top: 50px;
+
+    max-width: 650px;
+}
+
+
+.about-text h1 {
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            100px
+        );
+
+    line-height: 0.88;
+
+    font-weight: 300;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 35px;
+}
+
+
+.about-text p {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    max-width: 350px;
+}
+
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-content {
+    width: 100%;
+
+    min-height:
+        calc(100vh - 90px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 10vw;
+}
+
+
+.contact-heading {
+    width: 45%;
+}
+
+
+.contact-heading h1 {
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            100px
+        );
+
+    line-height: 0.88;
+
+    font-weight: 300;
+
+    letter-spacing: -3px;
+}
+
+
+#contactForm {
+    width: 420px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+
+    border: 1px solid
+        rgba(255,255,255,0.18);
+
+    background:
+        rgba(255,255,255,0.03);
+
+    color: white;
+
+    padding: 15px;
+
+    outline: none;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+
+#contactForm input {
+    height: 50px;
+}
+
+
+#contactForm textarea {
+    resize: none;
+
+    min-height: 130px;
+}
+
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color:
+        rgba(255,255,255,0.55);
+}
+
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color:
+        rgba(255,255,255,0.35);
+}
+
+
+#contactForm button {
+    align-self: flex-start;
+
+    border: 1px solid
+        rgba(255,255,255,0.4);
+
+    background:
+        rgba(255,255,255,0.04);
+
+    color: white;
+
+    padding: 15px 22px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#contactForm button:hover {
+    background: white;
+
+    color: #020509;
+}
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.scroll {
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 6vw;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(255,255,255,0.4);
+}
+
+
+.scroll span {
+    display: block;
+
+    width: 1px;
+
+    height: 35px;
+
+    background:
+        rgba(255,255,255,0.5);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .moon-wrapper {
+        right: -20vw;
+
+        width: 650px;
+
+        height: 650px;
+    }
+
+
+    .destinations {
+        gap: 20px;
+    }
+
+
+    .contact-content {
+        padding: 0 6vw;
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        gap: 15px;
+    }
+
+
+    .hero-content {
+        margin-left: 5vw;
+
+        width: 400px;
+    }
+
+
+    .hero-content h1 {
+        font-size: 55px;
+    }
+
+
+    .moon-wrapper {
+        width: 500px;
+
+        height: 500px;
+
+        right: -250px;
+
+        opacity: 0.5;
+    }
+
+
+    .destinations {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+        gap: 25px;
+    }
+
+
+    .planet-card {
+        height: 350px;
+    }
+
+
+    .explore-main {
+        padding-top: 20px;
+
+        padding-bottom: 50px;
+
+        min-height: auto;
+    }
+
+
+    .contact-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        gap: 35px;
+    }
+
+
+    .contact-heading {
+        width: 100%;
+    }
+
+
+    #contactForm {
+        width: 100%;
+
+        max-width: 500px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* -------------------------------------
+       BODY
+    ------------------------------------- */
+
+    body {
+        overflow-x: hidden;
+
+        overflow-y: auto;
+
+        min-height: 100vh;
+    }
+
+
+    /* -------------------------------------
+       HEADER
+    ------------------------------------- */
+
+    header {
+        padding: 0 5vw;
+
+        height: 75px;
+    }
+
+
+    .logo {
+        font-size: 14px;
+    }
+
+
+    nav {
+        display: none;
+    }
+
+
+    /* -------------------------------------
+       HOME
+    ------------------------------------- */
+
+    .hero-content {
+        margin-left: 7vw;
+
+        width: 80%;
+    }
+
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+
+    .moon-wrapper {
+        width: 420px;
+
+        height: 420px;
+
+        right: -210px;
+
+        opacity: 0.35;
+    }
+
+
+    /* -------------------------------------
+       EXPLORE
+    ------------------------------------- */
+
+    .explore-main {
+
+        min-height: auto;
+
+        height: auto;
+
+        padding-top: 20px;
+
+        padding-bottom: 60px;
+
+        overflow: visible;
+
+        width: 100%;
+    }
+
+
+    .explore-heading {
+
+        width: 90%;
+
+        max-width: 650px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .explore-heading h1 {
+
+        font-size: 45px;
+
+        line-height: 0.9;
+    }
+
+
+    .explore-heading .description {
+
+        width: 100%;
+
+        max-width: 480px;
+
+        font-size: 13px;
+    }
+
+
+    .destinations {
+
+        width: 90%;
+
+        max-width: 500px;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-top: 5px;
+
+        padding-bottom: 30px;
+    }
+
+
+    .planet-card {
+
+        width: 100%;
+
+        height: 350px;
+
+        flex-shrink: 0;
+    }
+
+
+    .planet-view {
+
+        height: 250px;
+    }
+
+
+    .planet-info {
+
+        left: 22px;
+
+        right: 22px;
+
+        bottom: 20px;
+    }
+
+
+    .planet-info h2 {
+
+        font-size: 25px;
+    }
+
+
+    /* -------------------------------------
+       ABOUT
+    ------------------------------------- */
+
+    .about-content {
+
+        padding: 0 7vw;
+
+        min-height:
+            calc(100vh - 75px);
+    }
+
+
+    .about-label {
+
+        left: 7vw;
+    }
+
+
+    .about-text h1 {
+
+        font-size: 50px;
+    }
+
+
+    /* -------------------------------------
+       CONTACT
+    ------------------------------------- */
+
+    .contact-content {
+
+        padding: 0 7vw;
+
+        min-height:
+            calc(100vh - 75px);
+    }
+
+
+    .contact-heading h1 {
+
+        font-size: 50px;
+    }
+
+}
+/* =========================================
+   MUSEUM PAGE STYLES
+========================================= */
+.museum-page {
+    overflow-y: auto !important;
+}
+
+.museum-main {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 40px 5vw 80px 5vw !important;
+    min-height: calc(100vh - 90px);
+}
+
+.museum-heading {
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 45px;
+}
+
+.museum-heading h1 {
+    font-size: clamp(35px, 4vw, 55px);
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.artifact-grid {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.artifact-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.artifact-card:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-6px);
+}
+
+.artifact-img-box {
+    width: 100%;
+    height: 200px;
+    background: #111;
+    overflow: hidden;
+}
+
+.artifact-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.artifact-card:hover .artifact-img-box img {
+    transform: scale(1.05);
+}
+
+.artifact-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.artifact-tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 8px;
+}
+
+.artifact-info h2 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.artifact-snippet {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.explore-link {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 3px;
+    align-self: flex-start;
+    transition: 0.3s;
+}
+
+.artifact-card:hover .explore-link {
+    border-color: white;
+    opacity: 0.8;
+}
+
+/* MODAL POPUP STYLES */
+.artifact-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 5, 9, 0.85);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+}
+
+.artifact-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    position: relative;
+    background: rgba(15, 18, 25, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 750px;
+    max-height: 85vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    background: white;
+    color: black;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+    padding: 30px;
+}
+
+.modal-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    min-height: 250px;
+}
+
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-text h2 {
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.modal-date {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+.modal-text .info-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal-text .info-row span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.modal-text .info-row strong {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .modal-body {
+        grid-template-columns: 1fr;
+    }
+    .modal-img img {
+        height: 180px;
+        min-height: auto;
+    }
+}

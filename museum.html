@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum | Space Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="space museum-page">
+
+        <!-- ================= HEADER ================= -->
+        <header>
+            <div class="logo">
+                ◐ SPACE EXPLORER
+            </div>
+
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="explore.html">EXPLORE</a>
+                <a href="museum.html" class="active">MUSEUM</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+        </header>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="museum-main">
+
+            <div class="museum-heading">
+                <p class="eyebrow">LUNAR & MARTIAN ARTIFACTS</p>
+                <h1>SURFACE EQUIPMENT MUSEUM</h1>
+                <p class="description">
+                    Discover iconic landers, rovers, and scientific packages left behind on the Moon and Mars by historic space missions.
+                </p>
+            </div>
+
+            <!-- CARDS GRID (5 ITEMS) -->
+            <div class="artifact-grid" id="artifactGrid">
+
+                <!-- Artifact 1: Surveyor 3 (Moon) -->
+                <div class="artifact-card" data-id="surveyor3">
+                    <div class="artifact-img-box">
+                        <img src="surveyor3.jpg" alt="Surveyor 3">
+                    </div>
+                    <div class="artifact-info">
+                        <span class="artifact-tag">MOON LANDER</span>
+                        <h2>Surveyor 3</h2>
+                        <p class="artifact-snippet">Uncrewed lunar lander visited years later by Apollo 12 astronauts.</p>
+                        <span class="explore-link">VIEW DETAILS →</span>
+                    </div>
+                </div>
+
+                <!-- Artifact 2: Apollo Lunar Rover (Moon) -->
+                <div class="artifact-card" data-id="lunarrover">
+                    <div class="artifact-img-box">
+                        <img src="lunarrover.jpg" alt="Apollo Lunar Rover">
+                    </div>
+                    <div class="artifact-info">
+                        <span class="artifact-tag">MOON VEHICLE</span>
+                        <h2>Apollo Lunar Rover</h2>
+                        <p class="artifact-snippet">The iconic electric vehicle driven across the lunar surface during Apollo missions.</p>
+                        <span class="explore-link">VIEW DETAILS →</span>
+                    </div>
+                </div>
+
+                <!-- Artifact 3: ALSEP (Moon) -->
+                <div class="artifact-card" data-id="alsep">
+                    <div class="artifact-img-box">
+                        <img src="alsep.jpg" alt="ALSEP Package">
+                    </div>
+                    <div class="artifact-info">
+                        <span class="artifact-tag">SCIENTIFIC STATION</span>
+                        <h2>ALSEP Package</h2>
+                        <p class="artifact-snippet">A set of nuclear-powered scientific instruments left on the Moon to monitor seismic activity.</p>
+                        <span class="explore-link">VIEW DETAILS →</span>
+                    </div>
+                </div>
+
+                <!-- Artifact 4: Spirit Rover (Mars) -->
+                <div class="artifact-card" data-id="spirit">
+                    <div class="artifact-img-box">
+                        <img src="spirit.jpg" alt="Spirit Rover">
+                    </div>
+                    <div class="artifact-info">
+                        <span class="artifact-tag">MARS ROVER</span>
+                        <h2>Spirit Rover</h2>
+                        <p class="artifact-snippet">Explored Martian craters and soil before getting permanently stuck in sand.</p>
+                        <span class="explore-link">VIEW DETAILS →</span>
+                    </div>
+                </div>
+
+                <!-- Artifact 5: Opportunity Rover (Mars) -->
+                <div class="artifact-card" data-id="opportunity">
+                    <div class="artifact-img-box">
+                        <img src="opportunity.jpg" alt="Opportunity Rover">
+                    </div>
+                    <div class="artifact-info">
+                        <span class="artifact-tag">MARS ROVER</span>
+                        <h2>Opportunity Rover</h2>
+                        <p class="artifact-snippet">The legendary robotic rover that survived for nearly 15 years on the Red Planet.</p>
+                        <span class="explore-link">VIEW DETAILS →</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- DETAILED MODAL -->
+        <div class="artifact-modal" id="artifactModal">
+            <div class="modal-content">
+                <button class="close-modal" id="closeModal">&times;</button>
+                <div class="modal-body" id="modalBody">
+                    <!-- Dynamic content injected via JS -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="museum.js"></script>
+</body>
+
+</html>

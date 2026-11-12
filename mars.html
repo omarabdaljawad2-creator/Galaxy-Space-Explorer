@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mars Explorer</title>
+
+    <link
+        rel="stylesheet"
+        href="mars.css"
+    >
+
+    <!-- THREE.JS -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+        }
+    }
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- STARS -->
+
+    <div class="stars"></div>
+
+
+    <!-- TOP BAR -->
+
+    <header class="top-bar">
+
+        <div class="logo">
+            MARS<span>EXPLORER</span>
+        </div>
+
+        <button
+            id="backBtn"
+            class="back-btn"
+        >
+            ← BACK
+        </button>
+
+    </header>
+
+
+    <!-- MARS AREA -->
+
+    <main class="mars-area">
+
+
+        <!-- 3D MARS -->
+
+        <div id="mars3d-container"></div>
+
+
+        <!-- INSTRUCTION -->
+
+        <div
+            class="instruction"
+            id="instruction"
+        >
+            SELECT A MARS EQUIPMENT LOCATION
+        </div>
+
+
+        <!-- INFORMATION CARD -->
+
+        <aside
+            class="info-card"
+            id="infoCard"
+        >
+
+
+            <!-- CLOSE -->
+
+            <button
+                class="close-card"
+                id="closeCard"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+            <!-- IMAGE -->
+
+            <div class="equipment-image-container">
+
+                <img
+                    id="equipmentImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="card-content">
+
+
+                <p class="small-title">
+                    MARS EQUIPMENT
+                </p>
+
+
+                <h1 id="equipmentName">
+                    Equipment
+                </h1>
+
+
+                <div class="info-row">
+
+                    <span>
+                        DATE
+                    </span>
+
+                    <strong id="equipmentDate">
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        FUNCTION
+                    </span>
+
+                    <strong id="equipmentFunction">
+                    </strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        WHY LEFT?
+                    </span>
+
+                    <strong id="equipmentReason">
+                    </strong>
+
+                </div>
+
+
+                <!-- SOURCE -->
+
+                <div class="source-row">
+
+                    <span class="source-label">
+                        SOURCE
+                    </span>
+
+                    <a
+                        id="nasaSource"
+                        class="nasa-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW NASA SOURCE ↗
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </aside>
+
+
+    </main>
+
+
+    <!-- ONLY ONE JAVASCRIPT FILE -->
+
+    <script
+        type="module"
+        src="mars.js"
+    ></script>
+
+
+</body>
+
+</html>

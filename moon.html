@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moon Explorer</title>
+
+    <link rel="stylesheet" href="moon.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         STARS
+    ========================== -->
+
+    <div class="stars"></div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="top-bar">
+
+        <div class="logo">
+            MOON<span>EXPLORER</span>
+        </div>
+
+        <button
+            id="backBtn"
+            class="back-btn">
+
+            ← BACK
+
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="moon-area">
+
+
+        <!-- =========================
+             3D MOON
+        ========================== -->
+
+        <div
+            id="moon3d"
+            class="moon3d">
+        </div>
+
+
+        <!-- =========================
+             EQUIPMENT MARKERS
+        ========================== -->
+
+        <button
+            class="equipment-marker"
+            data-equipment="lrrr"
+            aria-label="Laser Ranging Retroreflector">
+
+            <span></span>
+
+        </button>
+
+
+        <button
+            class="equipment-marker"
+            data-equipment="psep"
+            aria-label="Passive Seismic Experiment Package">
+
+            <span></span>
+
+        </button>
+
+
+        <!-- =========================
+             INSTRUCTION
+        ========================== -->
+
+        <div
+            class="instruction"
+            id="instruction">
+
+            DRAG TO ROTATE · SELECT AN EQUIPMENT LOCATION
+
+        </div>
+
+
+        <!-- =========================
+             INFORMATION CARD
+        ========================== -->
+
+        <aside
+            class="info-card"
+            id="infoCard">
+
+
+            <!-- CLOSE -->
+
+            <button
+                class="close-card"
+                id="closeCard"
+                aria-label="Close">
+
+                ×
+
+            </button>
+
+
+            <!-- IMAGE -->
+
+            <div class="equipment-image-container">
+
+                <img
+                    id="equipmentImage"
+                    src=""
+                    alt="">
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="card-content">
+
+                <p class="small-title">
+                    LUNAR EQUIPMENT
+                </p>
+
+
+                <h1 id="equipmentName">
+                    Equipment
+                </h1>
+
+
+                <div class="info-row">
+
+                    <span>
+                        DATE
+                    </span>
+
+                    <strong id="equipmentDate"></strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        FUNCTION
+                    </span>
+
+                    <strong id="equipmentFunction"></strong>
+
+                </div>
+
+
+                <div class="info-row">
+
+                    <span>
+                        WHY LEFT?
+                    </span>
+
+                    <strong id="equipmentReason"></strong>
+
+                </div>
+
+
+                <a
+                    id="nasaSource"
+                    class="nasa-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    VIEW NASA SOURCE ↗
+
+                </a>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- =========================
+         MOON JAVASCRIPT
+    ========================== -->
+
+    <script
+        type="module"
+        src="moon.js">
+    </script>
+
+</body>
+
+</html>
